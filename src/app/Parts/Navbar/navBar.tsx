@@ -8,6 +8,7 @@ import MenuClose from "@/../public/Home/close.png"
 import Wand from "@/../public/Home/Wand.png"
 import ligth from "@/../public/Home/ligth.png"
 import DropDown from '../DropDown/DropDown';
+import { MoonIcon, SunIcon } from '@heroicons/react/20/solid'
 
 interface NavBarProps {
         getTeam: string;
@@ -16,7 +17,6 @@ interface NavBarProps {
 
 export default function NavBar(props: NavBarProps) {
         const [OpenMenu, setOpenMenu] = useState(false);
-        const [getCode, setCode] = useState("");
         const t = useTranslations('Navbar');
         const handleIsOpen = () => {
                 setOpenMenu(!OpenMenu)
@@ -29,8 +29,6 @@ export default function NavBar(props: NavBarProps) {
                 } else {
                         document.documentElement.classList.remove("dark");
                 }
-                const getCockie = window.location.pathname
-                if (getCockie !== null) setCode(getCockie.slice(1, 3));
         }, [props.getTeam]);
 
         const handleTeam = () => {
@@ -58,11 +56,9 @@ export default function NavBar(props: NavBarProps) {
                                                                 </li>
                                                                 <li className='my-6'>
                                                                         <div onClick={handleTeam} className=''>
-                                                                                <Image className='WandImag' width={50} height={50} src={Wand} alt='Wand' />
-                                                                                {props.getTeam === "dark" ? <div className='relative -mt-20 ltr:-ml-8 rtl:mr-5'>
-                                                                                        <Image width={60} height={60} src={ligth} alt='ligth' />
-                                                                                </div> : null}
-
+                                                                                {props.getTeam === "dark" ? <div className=''>
+                                                                                        <MoonIcon className="h-7 w-7" aria-hidden="true" />
+                                                                                </div> : <SunIcon className="h-7 w-7" aria-hidden="true" />}
                                                                         </div>
                                                                 </li>
                                                         </ul>
@@ -86,11 +82,10 @@ export default function NavBar(props: NavBarProps) {
                                                                         <DropDown />
                                                                 </li>
                                                                 <li className="px-8">
-                                                                        <div onClick={handleTeam} className='-mt-2'>
-                                                                                <Image className='WandImag' width={50} height={50} src={Wand} alt='Wand' />
-                                                                                {props.getTeam === "dark" ? <div className='relative -mt-20 ltr:-ml-8 rtl:mr-7'>
-                                                                                        <Image width={55} height={55} src={ligth} alt='ligth' />
-                                                                                </div> : null}
+                                                                        <div onClick={handleTeam} className=''>
+                                                                                {props.getTeam === "dark" ? <div className=''>
+                                                                                        <MoonIcon className="h-7 w-7" aria-hidden="true" />
+                                                                                </div> : <SunIcon className="h-7 w-7" aria-hidden="true" />}
                                                                         </div>
                                                                 </li>
                                                         </ul>

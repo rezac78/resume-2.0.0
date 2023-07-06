@@ -12,7 +12,7 @@ export default function Project(props: ProjectProps) {
         const t = useTranslations('resumeEducation-In');
         return (
                 <>
-                        <div className="flex flex-col mt-2" key={props.id}>
+                        <div className="flex flex-col mt-2">
                                 <div className="relative flex justify-between text-ligth-color-text dark:text-dark-color-text">
                                         <span className="text-base text-ligth-color-text dark:text-dark-color-text font-bold">{props.projectTitle}</span>
                                         <div className="bg-ligth-color-text dark:bg-dark-color-text dark:text-black text-sm text-white rounded-xl py-1 px-3">{props.projectsData}</div>

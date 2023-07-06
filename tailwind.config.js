@@ -41,11 +41,16 @@ module.exports = {
         },
         blinker:{
           '50%': { opacity: '0' },
-        }
+        },
+        wiggle3: {
+          'from': { transform: 'translateY(30vh)' , opacity: '0' },
+          'to': { transform: 'translateY(0)', opacity: '100' },
+        },
       },
       animation: {
         'Left&rigth': 'wiggle 1s ease-in-out infinite',
         'scroll-top': 'wiggle2 1s linear 0s alternate',
+        'scroll-top-parts': 'wiggle3 2s linear 0s alternate',
         'blinkerType': 'blinker .8s linear infinite',
       }
     },

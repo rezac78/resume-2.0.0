@@ -39,7 +39,7 @@ export default async function RootLayout({
 
   return (
     <html dir={locale === 'fa' ? "rtl" : "ltr"} lang={locale}>
-      <body className={inter.className}>
+      <body suppressHydrationWarning={true}  className={inter.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>

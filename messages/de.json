@@ -71,6 +71,10 @@
     "title": "Seite nicht gefunden",
     "description": "Bitte überprüfe die Addressleiste deines Browsers oder verwende die Navigation um zu einer bekannten Seite zu wechseln."
   },
+  "AlertsMSG":{
+    "Successfully":"Erfolgreich senden 👍",
+    "error":"Senden nicht erfolgreich ❗️❗️❗️"
+  },
   "LocaleLayout": {
     "title": "RezaMehrzad"
   },

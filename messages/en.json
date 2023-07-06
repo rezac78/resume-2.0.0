@@ -69,6 +69,10 @@
     "MessageTitle":"Message",
     "Send": "send"
   },
+  "AlertsMSG":{
+    "Successfully":"send Successfully 👍",
+    "error":"send Not Successful ❗️❗️❗️"
+  },
   "LocaleLayout": {
     "title": "RezaMehrzad"
   },

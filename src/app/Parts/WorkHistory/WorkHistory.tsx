@@ -12,7 +12,7 @@ export default function WorkHistory(props: workHistoryProps) {
         const t = useTranslations('resumeEducation-In');
         return (
                 <>
-                        <div className="experience-container " key={props.key}>
+                        <div className="experience-container ">
                                 <div className="flex flex-col mt-2">
                                         <div className="relative flex justify-between text-ligth-color-text dark:text-dark-color-text">
                                                 <span className='font-bold'>{props.workHistoryTitle}</span>

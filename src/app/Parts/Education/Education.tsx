@@ -5,7 +5,6 @@ interface EducationProps {
         educationData: string;
         educationStady: string;
         educationLocation: string;
-        key: number;
 }
 
 export default function Education(props: EducationProps) {
@@ -13,7 +12,7 @@ export default function Education(props: EducationProps) {
 
         return (
                 <>
-                        <div key={props.key} className="flex flex-col h-40 w-full justify-evenly">
+                        <div className="flex flex-col h-40 w-full justify-evenly">
                                 <div className="flex flex-col mt-2">
                                         <div className="relative flex justify-between  text-ligth-color-text dark:text-dark-color-text">
                                                 <span>{props.educationTitle}</span>

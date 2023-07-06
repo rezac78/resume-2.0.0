@@ -11,10 +11,10 @@ export default function IconSocialMedia() {
                                 <Link href="https://github.com/rezac78" target="_blank">
                                         <Image className='text-white p-2 pl-0 h-12 w-10 hover:scale-150' src={Github} alt="Github" />
                                 </Link>
-                                <Link href="https://www.linkedin.com/in/reza-dalvand-ab7a32206/" target="_blank">
+                                <Link href="https://www.linkedin.com/in/reza-mehrzad-ab7a32206/" target="_blank">
                                         <Image className='text-white p-2 pl-0 h-12 w-10 hover:scale-150' src={Linkedin} alt="Linkedin" />
                                 </Link>
-                                <Link href="https://www.instagram.com/reza.dalvand78" target="_blank">
+                                <Link href="https://www.instagram.com/reza.mehrzad78" target="_blank">
                                         <Image className='text-white p-2 pl-0 h-12 w-10 hover:scale-150' src={Instagram} alt="Instagram" />
                                 </Link>
                                 <a href="tel:09032802041">

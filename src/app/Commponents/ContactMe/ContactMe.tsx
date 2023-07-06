@@ -1,69 +1,66 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
-// import { ToastContainer, toast } from 'react-toastify';
 import { useTranslations } from 'next-intl';
-// import { useFormik } from "formik";
-import i18next from 'i18next';
-// import api from "../../api/api";
-// import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from 'react-toastify';
+import emailjs from '@emailjs/browser';
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import Image from 'next/image'
-import Link from 'next/link'
-// import { FormSchema } from "../../../schemas";
+import { SchemaForm } from "../../../../Schemas/FormSchema";
 import Mailz from '@/../public/Home/mailz.svg'
-// import Aos from "aos";
-// import "aos/dist/aos.css";
 import PaperPlane from "@/../public/Home/email-send.png"
 import PartsHeader from '../../Parts/PartsHeader/PartsHeader';
 import IconSocialMedia from '../../Parts/IconSocialMedia/IconSocialMedia';
 import FormInput from '../../Parts/FormInput/FormInput';
 import BouttonScroll from '../../Parts/BouttonScroll/BouttonScroll';
+import Alerts from "../../Parts/Alerts/Alerts"
 export default function ContactMe() {
+        const form: any = useRef();
         const [inputVal, setInputVal] = useState(false)
-        const form = useRef();
+        const [getCode, setCode] = useState("")
         const t = useTranslations('ContactMe');
         const Inputs = [
-                { id: 1, Lable: 'name', Type: 'text', Placeholder: t("NameTitle"), TiTel: t("NameTitle") },
-                { id: 2, Lable: 'email', Type: 'email', Placeholder: t("EmailTitle"), TiTel: t("EmailTitle") },
+                { id: 1, Lable: 'user_name', Type: 'text', Placeholder: t("NameTitle"), TiTel: t("NameTitle") },
+                { id: 2, Lable: 'user_email', Type: 'email', Placeholder: t("EmailTitle"), TiTel: t("EmailTitle") },
                 { id: 3, Lable: 'message', Type: 'text', Placeholder: t("MessageTitle"), TiTel: t("MessageTitle") },
         ]
-        const onSubmit = (e, actions) => {
-                // setInputVal(true);
-                // api.post("api/", e);
-                // emailjs.sendForm('service_pke74m6', 'template_hk0t1os', form.current, '-AohTxKTUcg7RfNbr')
-                //         .then((result) => {
-                //                 LocaleCookie === "en" ?
-                //                         toast.success("Successful send 👍", {
-                //                                 position: "top-right",
-                //                                 closeButton: true,
-                //                                 closeOnClick: true,
-                //                         })
-                //                         :
-                //                         toast.success("ارسال شد 👍", {
-                //                                 position: "top-right",
-                //                                 closeButton: true,
-                //                                 closeOnClick: true,
-                //                         });
-                //                 setInputVal(false);
-                //                 actions.resetForm();
-                //         }, (error) => {
-                //                 toast.error(` Eror❗️❗️❗️`, {
-                //                         position: "top-right",
-                //                         closeOnClick: true,
-                //                 });
-                //         });
-        }
-        // const { values, errors, handleChange, handleSubmit } = useFormik({
-        //         initialValues: {
-        //                 user_email: "",
-        //                 user_name: "",
-        //                 message: "",
-        //         },
-        //         validationSchema: FormSchema,
-        //         onSubmit,
-        // });
+        const [windowWidth, setWindowWidth] = useState(0);
+        const [CodeSucss, setcodeSucss] = useState<number>();
+        const [alert, setAlert] = useState(false);
+        useEffect(() => {
+                function handleResize() {
+                        setWindowWidth(window.scrollY);
+                }
+                window.addEventListener("scroll", handleResize);
+                handleResize();
+                const getCockie = window.location.pathname
+                if (getCockie !== null) setCode(getCockie.slice(1, 3));
+        }, []);
+        const { register, handleSubmit, formState: { errors: clientFormError } } = useForm({
+                resolver: yupResolver(SchemaForm),
+        });
+        const onSubmit = (data) => {
+                setInputVal(true);
+                console.log(data)
+                emailjs.sendForm('service_pke74m6', 'template_hk0t1os', form.current, '-AohTxKTUcg7RfNbr')
+                        .then((result) => {
+                                setcodeSucss(result.status);
+                        }, (error) => {
+                                console.log(error.status)
+
+                        });
+                setInputVal(false);
+                setAlert(true);
+                setTimeout(() => {
+                        setAlert(false);
+                }, 4000);
+        };
         return (
-                <div data-aos="fade-up" className="translate-y-px" id="ContactMe">
+                <div className={`${windowWidth > 900 ? "animate-scroll-top-parts" : ""} translate-y-px`} id="ContactMe">
                         <PartsHeader Title={t("ContactMe")} Question={t("QuestionContactMe")} />
+                        <div className="flex flex-col justify-center max-w-[1100px] rounded-full mx-auto mb-5">
+                                {alert ? <Alerts CodeSucss={CodeSucss} /> : null}
+                        </div>
                         <div className="p-8 flex flex-col justify-center bg-[#1f2235] max-w-[1100px] rounded-xl mx-auto shadow-[0px_0px_20px_-2px] shadow-[#1f2235] dark:border-2 dark:border-[#383838]">
                                 <div className="">
                                         <h2 className="text-white mb-5 text-2xl mobile:text-4xl font-bold tracking-wider">
@@ -72,27 +69,26 @@ export default function ContactMe() {
                                         <IconSocialMedia />
                                 </div>
                                 <div className="tablet:flex mx-auto">
-                                        <div className="w-full h-auto mr-5 mb-5 tablet:mt-12">
+                                        <div className="w-full h-auto ltr:mr-5 rtl:ml-5 mb-5 tablet:mt-12">
                                                 <h3 className='font-normal text-white text-lg opacity-60 tracking-wider'>{t("SendEmail")}</h3>
                                                 <Image className='w-full h-2/4 opacity-60' src={Mailz} alt="not found" />
                                         </div>
-                                        <form className='w-full tablet:w-3/4 flex p-4 justify-center flex-col -mt-12 bg-white rounded-xl opacity-90 text-white shadow-[0px_0px_20px_-2px] shadow-[#1f2235]' ref={form}>
+                                        <form ref={form} onSubmit={handleSubmit(onSubmit)} className='w-full tablet:w-3/4 flex p-4 justify-center flex-col -mt-12 bg-white rounded-xl opacity-90 text-white shadow-[0px_0px_20px_-2px] shadow-[#1f2235]'>
                                                 <div>
                                                         {Inputs.map((e) => {
-                                                                return <FormInput Lable={e.Lable} Type={e.Type} Placeholder={e.Placeholder} TiTel={e.TiTel} />
+                                                                return <FormInput getCode={getCode} errors={clientFormError} Register={register} key={e.id} Lable={e.Lable} Type={e.Type} Placeholder={e.Placeholder} TiTel={e.TiTel} />
                                                         })}
                                                 </div>
                                                 <button
-                                                        type="button"
+                                                        type="submit"
                                                         className="flex mt-4 p-1 w-40 text-gray-300 text-lg bg-gray-900 items-center justify-center rounded-full border-2 border-ligth-color-text hover:bg-gray-900 hover:border-2 hover:border-[#1f2235] hover:ease-in hover:delay-500 dark:border-dark-color-text dark:hover:border-[#1f2235]"
                                                 >
-                                                        {t("Send")}<Image className='ml-1' src={PaperPlane} alt="PaperPlane" />
+                                                        {t("Send")}<Image className='ltr:ml-1 rtl:mr-1' src={PaperPlane} alt="PaperPlane" />
                                                 </button>
                                         </form>
                                 </div>
                         </div>
                         <BouttonScroll />
-                        {/* <ToastContainer /> */}
                 </div>
         )
 }

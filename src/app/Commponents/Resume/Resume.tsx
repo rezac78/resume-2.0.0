@@ -40,12 +40,20 @@ export default function Resume() {
                 { id: 2, projectTitle: t("projectTitle"), projectsData: t("projectsData"), projectsTochnologies: t("projectsTochnologies"), projectsSummery: t("projectsSummery"), projectsLink: t("projectsLink") },
                 { id: 3, projectTitle: t("projectTitle"), projectsData: t("projectsData"), projectsTochnologies: t("projectsTochnologies"), projectsSummery: t("projectsSummery"), projectsLink: t("projectsLink") },
         ];
+        const [windowWidth, setWindowWidth] = useState(0);
+        useEffect(() => {
+                function handleResize() {
+                        setWindowWidth(window.scrollY);
+                }
+                window.addEventListener("scroll", handleResize);
+                handleResize();
+        }, []);
 
         return (
-                <div data-aos="fade-up" className="flex p-5 tablet:p-0 w-11/12 tablet:w-8/12 m-auto flex-col justify-center my-28 text-black" id="Resume">
+                <div className={`${windowWidth > 500 ? "animate-scroll-top-parts" : ""} flex p-5 tablet:p-0 w-11/12 tablet:w-8/12 m-auto flex-col justify-center my-28 text-black animate-scroll-top`} id="Resume">
                         <div className="">
                                 <PartsHeader Title={t("Resume")} Question={t("QuestionResume")} />
-                                <div className="tablet:flex w-auto h-[360px]">
+                                <div className="tablet:flex w-auto h-auto tablet:h-[390px]">
                                         <div className="h-full w-auto tablet:w-80 shadow-[15px_0px_9px_-15px] shadow-[#1f2235] dark:shadow-[#4CD5AE]">
                                                 <div className="flex items-center h-full w-full relative">
                                                         <div className="w-8 h-full z-0 bg-gray-900 absolute"></div>
@@ -54,7 +62,7 @@ export default function Resume() {
                                                         </div>
                                                 </div>
                                         </div>
-                                        <div className="flex-grow overflow-hidden w-auto tablet:w-[34rem] pt-0 tablet:pl-20">
+                                        <div className="flex-grow overflow-hidden w-auto h-auto mt-10 tablet:mt-0 tablet:w-[34rem] pt-0 tablet:pl-20">
                                                 <div className={toggleState === 1 ? "animate-scroll-top" : "hidden"}>
                                                         <div className="overflow-y-auto h-[320px]">
                                                                 {resumeEducation?.map((e) => {
