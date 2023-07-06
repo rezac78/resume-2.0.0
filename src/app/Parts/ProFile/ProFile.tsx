@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { useTranslations } from 'next-intl';
 import { Typewriter } from 'react-simple-typewriter';
-import ProfileImg from "@/../public/Home/profilephoto.jpeg"
+import ProfileImg from "@/../public/Home/profilephoto.jpg"
 import Bouttons from '../Bouttons/Boutton';
 import IconSocialMedia from '../IconSocialMedia/IconSocialMedia';
 import { useEffect, useState } from 'react';
@@ -58,8 +58,8 @@ export default function Profile() {
                                                 <Bouttons LinkHref={getCode === "fa" ? "RezaDalvandCV.pdf" : "RezaDalvandEn.pdf"} download={getCode === "fa" ? "RezaDalvandCV.pdf" : "RezaDalvandEn.pdf"} Label="GetResume" Title={t("GetResume")} classButtons="w-40 bg-ligth-color-text dark:bg-dark-color-text dark:text-black hover:bg-white hover:dark:bg-white hover:text-black" />
                                         </div>
                                 </div>
-                                <div className="flex items-center justify-center shadow-lg shadow-white rounded-full w-72 h-72 tablet:h-96 tablet:w-5/12">
-                                        <div className="bg-cover bg-no-repeat bg-center rounded-full h-[92%] w-[92%] hover:scale-105 ease-out duration-300 delay-200">
+                                <div className="flex items-center justify-center shadow-lg shadow-white rounded-full w-72 h-72 tablet:h-[33.5%] tablet:w-[33.5%]">
+                                        <div className="bg-cover bg-no-repeat bg-center rounded-full h-[98%] w-[98%] hover:scale-105 ease-out duration-300 delay-200">
                                                 <Image className='rounded-full h-full w-full' src={ProfileImg} alt="ProfileImg" />
                                         </div>
                                 </div>

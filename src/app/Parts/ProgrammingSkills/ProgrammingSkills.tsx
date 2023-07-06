@@ -6,7 +6,7 @@ interface ProgrammingSkillsProps {
 
 export default function ProgrammingSkills(props: ProgrammingSkillsProps) {
         return (
-                <>
+                <div key={props.id}>
                         <div className="flex flex-col relative w-6/12 my-2">
                                 <span className='text-base text-ligth-color-text dark:text-dark-color-text'>{props.programmingSkillsTitle}</span>
                                 <div className="relative h-4 w-9/12 bg-ligth-color-text dark:bg-dark-color-text rounded-full">
@@ -14,6 +14,6 @@ export default function ProgrammingSkills(props: ProgrammingSkillsProps) {
                                         </div>
                                 </div>
                         </div>
-                </>
+                </div>
         )
 }

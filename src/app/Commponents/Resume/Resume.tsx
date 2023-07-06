@@ -83,7 +83,7 @@ export default function Resume() {
                                                         <div className="overflow-y-auto h-[320px]">
                                                                 <div className="flex flex-row h-auto w-full justify-evenly items-center justify-between flex-wrap">
                                                                         {programmingSkillsresume?.map((e) => {
-                                                                                return <ProgrammingSkills id={e.id} programmingSkillsTitle={e.programmingSkillsTitle} size={e.programmingSkillsNumber} />
+                                                                                return <ProgrammingSkills key={e.id} programmingSkillsTitle={e.programmingSkillsTitle} size={e.programmingSkillsNumber} />
                                                                         })}
                                                                 </div>
                                                         </div>
@@ -92,7 +92,7 @@ export default function Resume() {
                                                         <div className="overflow-y-auto h-[320px]">
                                                                 <div className="flex flex-col h-auto w-full justify-evenly">
                                                                         {resumeProject?.map((e) => {
-                                                                                return <Project id={e.id} projectsLink={e.projectsLink} projectsSummery={e.projectsSummery} projectTitle={e.projectTitle} projectsTochnologies={e.projectsTochnologies} projectsData={e.projectsData} />
+                                                                                return <Project key={e.id} projectsLink={e.projectsLink} projectsSummery={e.projectsSummery} projectTitle={e.projectTitle} projectsTochnologies={e.projectsTochnologies} projectsData={e.projectsData} />
                                                                         })}
                                                                 </div>
                                                         </div>

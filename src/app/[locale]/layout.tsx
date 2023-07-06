@@ -39,7 +39,12 @@ export default async function RootLayout({
 
   return (
     <html dir={locale === 'fa' ? "rtl" : "ltr"} lang={locale}>
-      <body suppressHydrationWarning={true}  className={inter.className}>
+      <link rel="shortcut icon" href="../../" />
+      <meta name="description"
+        content="Mary's simple recipe for maple bacon donuts
+           makes a sticky, sweet treat with just a hint
+           of salt that you'll keep coming back for." />
+      <body suppressHydrationWarning={true} className={inter.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
