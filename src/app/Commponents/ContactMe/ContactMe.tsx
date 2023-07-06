@@ -1,7 +1,6 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl';
-import { ToastContainer, toast } from 'react-toastify';
 import emailjs from '@emailjs/browser';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -25,7 +24,7 @@ export default function ContactMe() {
                 { id: 3, Lable: 'message', Type: 'text', Placeholder: t("MessageTitle"), TiTel: t("MessageTitle") },
         ]
         const [windowWidth, setWindowWidth] = useState(0);
-        const [CodeSucss, setcodeSucss] = useState<number>();
+        const [CodeSucss, setcodeSucss] = useState<any>();
         const [alert, setAlert] = useState(false);
         useEffect(() => {
                 function handleResize() {
@@ -39,7 +38,7 @@ export default function ContactMe() {
         const { register, handleSubmit, formState: { errors: clientFormError } } = useForm({
                 resolver: yupResolver(SchemaForm),
         });
-        const onSubmit = (data) => {
+        const onSubmit = (data: any) => {
                 setInputVal(true);
                 console.log(data)
                 emailjs.sendForm('service_pke74m6', 'template_hk0t1os', form.current, '-AohTxKTUcg7RfNbr')

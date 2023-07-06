@@ -4,7 +4,6 @@ interface ProjectProps {
         projectsData: string;
         projectsTochnologies: string;
         projectsSummery: string;
-        id: number;
         projectsLink: string;
 }
 

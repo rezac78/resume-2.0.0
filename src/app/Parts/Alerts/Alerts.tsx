@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import { Typewriter } from 'react-simple-typewriter';
 import { CheckCircleIcon, XMarkIcon } from '@heroicons/react/20/solid'
 import { useEffect, useState } from 'react';
-export default function Alerts({ CodeSucss }: number) {
+export default function Alerts({ CodeSucss }: any) {
         const t = useTranslations('AlertsMSG');
         return (
                 <div className="rounded-md bg-green-50 p-4">
