@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { useTranslations } from 'next-intl';
 
 interface EducationProps {
         educationTitle: string;
@@ -9,6 +9,8 @@ interface EducationProps {
 }
 
 export default function Education(props: EducationProps) {
+        const t = useTranslations('resumeEducation-In');
+
         return (
                 <>
                         <div key={props.key} className="flex flex-col h-40 w-full justify-evenly">
@@ -19,7 +21,7 @@ export default function Education(props: EducationProps) {
                                         </div>
                                         <div className="text-sm font-bold text-black my-2.5 dark:text-white">
                                                 <span>{props.educationStady}</span>
-                                                <div className="heading-Location">{"Location"} : {props.educationLocation}</div>
+                                                <div className="heading-Location">{t("Location")} : {props.educationLocation}</div>
                                         </div>
                                         <div className="text-xs text-justify">
                                                 <span></span>

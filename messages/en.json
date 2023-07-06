@@ -1,0 +1,79 @@
+{
+  "Navbar": {
+    "Home": "Home",
+    "AboutMe": "AboutMe",
+    "Resume": "Resume",
+    "ContactMe": "ContactMe"
+  },
+  "ProFile": {
+    "name": "Reza",
+    "greeting":"Hello, Im",
+    "title_summary1":"Full stack Developer 🖥️",
+    "title_summary2":"MERN Stack Dev 😎️",
+    "title_summary3":"Softwere Enginner 💻️",
+    "title_summary4":"React/Next/Node/Nest 🔴️",
+    "summery":"knack of building applications with front and back end operations.",
+    "GetResume":"Get Resume",
+    "ContactMe":"ContactMe"
+  },
+  "AboutMe": {
+    "HeaderSummery": "Full stack web developer with background knowledge of MERN stacks along with a knack of building applications with utmost efficiency.",
+    "highlightHead": "Here are a Few Highlights",
+    "highlight1":"Full Stack web development",
+    "highlight2":"Interactive Front End as per the design",
+    "highlight3":"React & Next & Node & Nest",
+    "highlight4":"Managing database",
+    "highlight5":"Bootstrap & Tailwind & material-ui design framework",
+    "GetResume":"Get Resume",
+    "ContactMe":"ContactMe",
+    "AboutMe": "AboutMe",
+    "QuestionAboutMe": "Why choose me?"
+  },
+  "Resume": {
+    "Resume": "Resume",
+    "QuestionResume": "My formal Bio Details",
+    "educationTitle": "Azad University",
+    "educationData": "Mar2022-Jul2022",
+    "educationStady": "Bachelor of Software Engineering",
+    "educationLocation": "Lorestan Khorramabad",
+    "workHistoryTitle": "Wish Work",
+    "workHistoryData": "Mar2022-Jul2022",
+    "workHistoryLocation": "iran Tehran",
+    "workHistoryPosition":"Software Engineering",
+    "workHistoryLink":"Wish Work",
+    "projectTitle":"haftohasht",
+    "projectsData":"Sweden",
+    "projectsTochnologies":"Nodejs-MongoDB-Reactjs-TailwindCss-Jira-Scram",
+    "projectsSummery": "A website to create a personal or business blog",
+    "projectsLink": "haftohasht"
+  },
+  "ResumeBar": {
+    "Education": "Education",
+    "WorkHistory": "WorkHistory",
+    "ProgrammingSkills": "ProgrammingSkills",
+    "Projects": "Projects"
+  },
+  "resumeEducation-In": {
+    "Location": "Location",
+    "Address": "Address",
+    "Technology":"Technology",
+    "Summary":"Summary"
+  },
+  "ContactMe":{
+    "ContactMe":"ContactMe",
+    "QuestionContactMe":"whyContactMe?",
+    "Touch":"Get In Touch",
+    "SendEmail":"Send Your Email Here!",
+    "EmailTitle":"Email",
+    "NameTitle":"Name",
+    "MessageTitle":"Message",
+    "Send": "send"
+  },
+  "LocaleLayout": {
+    "title": "RezaMehrzad"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, de {German} en {English} other {persion}}"
+  }
+}

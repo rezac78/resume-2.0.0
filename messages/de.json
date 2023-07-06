@@ -1,0 +1,81 @@
+{
+  "Navbar": {
+    "Home": "Heim",
+    "AboutMe": "Über mich",
+    "Resume": "Fortsetzen",
+    "ContactMe": "Kontaktiere mich"
+  },
+  "ProFile": {
+    "name": "Reza",
+    "greeting": "Hallo, ich bin",
+    "title_summary1": "Full Stack Entwickler 🖥️",
+    "title_summary2": "MERN Stack Dev 😎️",
+    "title_summary3": "Softwareentwickler 💻️",
+    "title_summary4": "React/Next/Node/Nest 🔴️",
+    "summery": "Talent für die Erstellung von Anwendungen mit Front- und Back-End-Operationen.",
+    "GetResume": "Holen Lebenslauf",
+    "ContactMe": "Kontaktiere mich"
+  },
+  "AboutMe": {
+    "HeaderSummery": "Full-Stack-Webentwickler mit Hintergrundwissen über MERN-Stacks und einem Gespür für die Erstellung von Anwendungen mit höchster Effizienz.",
+    "highlightHead": "Hier sind ein paar Highlights",
+    "highlight1": "Full Stack Webentwicklung",
+    "highlight2": "Interaktives Frontend gemäß Design",
+    "highlight3": "React & Next & Node & Nest",
+    "highlight4": "Datenbank verwalten",
+    "highlight5": "Bootstrap und Tailwind und Material UI Design Framework",
+    "GetResume": "Holen Lebenslauf",
+    "ContactMe": "Kontaktiere mich"
+  },
+  "Resume": {
+    "Resume": "Fortsetzen",
+    "QuestionResume": "Meine formellen Biografiedetails",
+    "educationTitle": "Azad Universität",
+    "educationData": "22März–22Juli",
+    "educationStady": "Bachelor of Software Engineering",
+    "educationLocation": "Laureston Khorramabad",
+    "workHistoryTitle": "Wunscharbeit",
+    "workHistoryData": "22März–22Juli",
+    "workHistoryLocation": "iran Tehran",
+    "workHistoryPosition": "Software Engineering",
+    "workHistoryLink": "Softwareentwicklung",
+    "projectTitle": "haftohasht",
+    "projectsData": "Schweden",
+    "projectsTochnologies": "Nodejs-MongoDB-Reactjs-TailwindCss-Jira-Scram",
+    "projectsSummery": "Eine Website zum Erstellen eines persönlichen oder geschäftlichen Blogs",
+    "projectsLink": "haftohasht"
+  },
+  "ResumeBar": {
+    "Education": "Ausbildung",
+    "WorkHistory": "Vorgeschichte",
+    "ProgrammingSkills": "Programmierkenntnisse",
+    "Projects": "Projekte"
+  },
+  "resumeEducation-In": {
+    "Location": "Standort",
+    "Address": "Adresse",
+    "Technology": "Technologie",
+    "Summary": "Zusammenfassung"
+  },
+  "ContactMe": {
+    "ContactMe": "Kontaktiere mich",
+    "QuestionContactMe": "Warum kontaktieren Sie mich?",
+    "Touch":"In Kontakt kommen",
+    "SendEmail":"Senden Sie hier Ihre E-Mail!",
+    "EmailTitle":"Email",
+    "NameTitle":"Name",
+    "MessageTitle":"Nachricht",
+    "Send": "schicken"
+  },
+  "NotFoundPage": {
+    "title": "Seite nicht gefunden",
+    "description": "Bitte überprüfe die Addressleiste deines Browsers oder verwende die Navigation um zu einer bekannten Seite zu wechseln."
+  },
+  "LocaleLayout": {
+    "title": "RezaMehrzad"
+  },
+  "LocaleSwitcher": {
+    "label": "Sprache ändern",
+    "locale": "{locale, select, de {Deutsch} en {Englisch} other {Farsi}}"
+  }
+}

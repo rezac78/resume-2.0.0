@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import shape from "../../../../public/Home/shape-bg.png"
-import shapeDark from "../../../../public/Home/shape-bg-Dark.png"
+import shape from "@/../public/Home/shape-bg.png"
+import shapeDark from "@/../public/Home/shape-bg-Dark.png"
 
 interface FooterProps {
         getTeam: string;

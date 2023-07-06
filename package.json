@@ -25,6 +25,7 @@
     "i18next-http-backend": "^2.2.1",
     "next": "13.4.7",
     "next-i18next": "^14.0.0",
+    "next-intl": "^3.0.0-beta.7",
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -32,5 +33,10 @@
     "react-simple-typewriter": "^5.0.1",
     "tailwindcss": "3.3.2",
     "typescript": "5.1.5"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   }
 }

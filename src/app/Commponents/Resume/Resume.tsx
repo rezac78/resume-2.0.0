@@ -6,43 +6,45 @@ import Education from "@/app/Parts/Education/Education";
 import WorkHistory from "@/app/Parts/WorkHistory/WorkHistory";
 import ProgrammingSkills from "@/app/Parts/ProgrammingSkills/ProgrammingSkills";
 import Project from "@/app/Parts/Project/Project";
+import { useTranslations } from 'next-intl';
 
-const resumeEducation = [
-        { id: 1, educationTitle: "Azad University", educationData: "Mar2022-Jul2022", educationStady: "Bachelor of Software Engineering", educationLocation: "Location : Lorestan Khorramabad" },
-        { id: 2, educationTitle: "Azad University", educationData: "Mar2022-Jul2022", educationStady: "Bachelor of Software Engineering", educationLocation: "Location : Lorestan Khorramabad" },
-];
-const resumeWorkHistorie = [
-        { id: 1, workHistoryTitle: "Wish Work", workHistoryData: "Mar2022-Jul2022", workHistoryLocation: "iran Tehran", workHistoryPosition: "Software Engineering", workHistoryLink: "Address : Wish Work" },
-        { id: 2, workHistoryTitle: "Wish Work", workHistoryData: "Mar2022-Jul2022", workHistoryLocation: "iran Tehran", workHistoryPosition: "Software Engineering", workHistoryLink: "Address : Wish Work" },
-        { id: 3, workHistoryTitle: "Wish Work", workHistoryData: "Mar2022-Jul2022", workHistoryLocation: "iran Tehran", workHistoryPosition: "Software Engineering", workHistoryLink: "Address : Wish Work" },
-];
 const programmingSkillsresume = [
-        { id: 1, programmingSkillsNumber: "80", programmingSkillsTitle: "JavaScript"},
-        { id: 2, programmingSkillsNumber: "80", programmingSkillsTitle: "JavaScript"},
-        { id: 3, programmingSkillsNumber: "50", programmingSkillsTitle: "node"},
-        { id: 4, programmingSkillsNumber: "50", programmingSkillsTitle: "node"},
-        { id: 5, programmingSkillsNumber: "80", programmingSkillsTitle: "JavaScript"},
-        { id: 6, programmingSkillsNumber: "50", programmingSkillsTitle: "node"},
-        { id: 7, programmingSkillsNumber: "50", programmingSkillsTitle: "node"},
-];
-const resumeProject = [
-        { id: 1, projectTitle: "haftohasht", projectsData: "Sweden", projectsTochnologies: "Nodejs-MongoDB-Reactjs-TailwindCss-Jira-Scram", projectsSummery: "A website to create a personal or business blog",projectsLink : "Address : haftohasht" },
-        { id: 2, projectTitle: "haftohasht", projectsData: "Sweden", projectsTochnologies: "Nodejs-MongoDB-Reactjs-TailwindCss-Jira-Scram", projectsSummery: "A website to create a personal or business blog",projectsLink : "Address : haftohasht" },
-        { id: 3, projectTitle: "haftohasht", projectsData: "Sweden", projectsTochnologies: "Nodejs-MongoDB-Reactjs-TailwindCss-Jira-Scram", projectsSummery: "A website to create a personal or business blog",projectsLink : "Address : haftohasht" },
+        { id: 1, programmingSkillsNumber: "80", programmingSkillsTitle: "JavaScript" },
+        { id: 2, programmingSkillsNumber: "80", programmingSkillsTitle: "JavaScript" },
+        { id: 3, programmingSkillsNumber: "50", programmingSkillsTitle: "node" },
+        { id: 4, programmingSkillsNumber: "50", programmingSkillsTitle: "node" },
+        { id: 5, programmingSkillsNumber: "80", programmingSkillsTitle: "JavaScript" },
+        { id: 6, programmingSkillsNumber: "50", programmingSkillsTitle: "node" },
+        { id: 7, programmingSkillsNumber: "50", programmingSkillsTitle: "node" },
 ];
 export default function Resume() {
         const [toggleState, setToggleState] = useState(1);
         const toggleTab = (index: number) => {
                 setToggleState(index);
         }
-        // useEffect(() => {
-        //         Aos.init({ duration: 2000 });
-        // }, []);
+        const t = useTranslations('Resume');
+
+        const resumeEducation = [
+                { id: 1, educationTitle: t("educationTitle"), educationData: t("educationData"), educationStady: t("educationStady"), educationLocation: t("educationLocation") },
+                { id: 2, educationTitle: t("educationTitle"), educationData: t("educationData"), educationStady: t("educationStady"), educationLocation: t("educationLocation") },
+        ];
+
+        const resumeWorkHistorie = [
+                { id: 1, workHistoryTitle: t("workHistoryTitle"), workHistoryData: t("workHistoryData"), workHistoryLocation: t("workHistoryLocation"), workHistoryPosition: t("workHistoryPosition"), workHistoryLink: t("workHistoryLink") },
+                { id: 2, workHistoryTitle: t("workHistoryTitle"), workHistoryData: t("workHistoryData"), workHistoryLocation: t("workHistoryLocation"), workHistoryPosition: t("workHistoryPosition"), workHistoryLink: t("workHistoryLink") },
+                { id: 3, workHistoryTitle: t("workHistoryTitle"), workHistoryData: t("workHistoryData"), workHistoryLocation: t("workHistoryLocation"), workHistoryPosition: t("workHistoryPosition"), workHistoryLink: t("workHistoryLink") },
+        ];
+
+        const resumeProject = [
+                { id: 1, projectTitle: t("projectTitle"), projectsData: t("projectsData"), projectsTochnologies: t("projectsTochnologies"), projectsSummery: t("projectsSummery"), projectsLink: t("projectsLink") },
+                { id: 2, projectTitle: t("projectTitle"), projectsData: t("projectsData"), projectsTochnologies: t("projectsTochnologies"), projectsSummery: t("projectsSummery"), projectsLink: t("projectsLink") },
+                { id: 3, projectTitle: t("projectTitle"), projectsData: t("projectsData"), projectsTochnologies: t("projectsTochnologies"), projectsSummery: t("projectsSummery"), projectsLink: t("projectsLink") },
+        ];
 
         return (
                 <div data-aos="fade-up" className="flex p-5 tablet:p-0 w-11/12 tablet:w-8/12 m-auto flex-col justify-center my-28 text-black" id="Resume">
                         <div className="">
-                                <PartsHeader Title="Resume" Question="My formal Bio Details" />
+                                <PartsHeader Title={t("Resume")} Question={t("QuestionResume")} />
                                 <div className="tablet:flex w-auto h-[360px]">
                                         <div className="h-full w-auto tablet:w-80 shadow-[15px_0px_9px_-15px] shadow-[#1f2235] dark:shadow-[#4CD5AE]">
                                                 <div className="flex items-center h-full w-full relative">
@@ -73,7 +75,7 @@ export default function Resume() {
                                                         <div className="overflow-y-auto h-[320px]">
                                                                 <div className="flex flex-row h-auto w-full justify-evenly items-center justify-between flex-wrap">
                                                                         {programmingSkillsresume?.map((e) => {
-                                                                                return <ProgrammingSkills id={e.id} programmingSkillsTitle={e.programmingSkillsTitle} size={e.programmingSkillsNumber}/>
+                                                                                return <ProgrammingSkills id={e.id} programmingSkillsTitle={e.programmingSkillsTitle} size={e.programmingSkillsNumber} />
                                                                         })}
                                                                 </div>
                                                         </div>

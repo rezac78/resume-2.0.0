@@ -1,3 +1,4 @@
+'use client'
 interface PartsHeaderProps {
         Title: string;
         Question: string;

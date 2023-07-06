@@ -1,13 +1,12 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { useTranslation } from "next-i18next";
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { navbar } from "../../Events/Events"
-import { useRouter } from 'next/navigation';
-import MenuOpen from "../../../../public/Home/menu.png"
-import MenuClose from "../../../../public/Home/close.png"
-import Wand from "../../../../public/Home/Wand.png"
-import ligth from "../../../../public/Home/ligth.png"
+import { navbar } from "@/Events/Events"
+import MenuOpen from "@/../public/Home/menu.png"
+import MenuClose from "@/../public/Home/close.png"
+import Wand from "@/../public/Home/Wand.png"
+import ligth from "@/../public/Home/ligth.png"
 import DropDown from '../DropDown/DropDown';
 
 interface NavBarProps {
@@ -17,26 +16,29 @@ interface NavBarProps {
 
 export default function NavBar(props: NavBarProps) {
         const [OpenMenu, setOpenMenu] = useState(false);
-        const router = useRouter();
+        const [getCode, setCode] = useState("");
+        const t = useTranslations('Navbar');
         const handleIsOpen = () => {
                 setOpenMenu(!OpenMenu)
         }
         const [activeId, setActiveId] = useState(1)
 
-        useEffect(()=>{
-                if(props.getTeam === "dark"){
+        useEffect(() => {
+                if (props.getTeam === "dark") {
                         document.documentElement.classList.add("dark");
-                }else{
+                } else {
                         document.documentElement.classList.remove("dark");
                 }
-        },[props.getTeam]);
+                const getCockie = window.location.pathname
+                if (getCockie !== null) setCode(getCockie.slice(1, 3));
+        }, [props.getTeam]);
 
         const handleTeam = () => {
-                props.setTeam(props.getTeam === "dark"? "light" : "dark")
+                props.setTeam(props.getTeam === "dark" ? "light" : "dark")
         }
 
         return (
-                <div className="p-0 tablet:relative flex justify-center items-center w-full box-border py-12 dark:bg-black">
+                <div className='p-0 tablet:relative flex justify-center items-center w-full box-border py-12 dark:bg-black'>
                         {
                                 OpenMenu === true ?
                                         <div >
@@ -46,7 +48,7 @@ export default function NavBar(props: NavBarProps) {
                                                                         <li key={key} onClick={() => setActiveId(val.id)} className="my-6">
                                                                                 <a className='text-white text-xl' href={val.Link} >
                                                                                         <span className={activeId === val.id ? "text-ligth-color-text dark:text-dark-color-text" : ""}>
-                                                                                                {val.name}
+                                                                                                {t(val.name)}
                                                                                         </span>
                                                                                 </a>
                                                                         </li>
@@ -57,7 +59,7 @@ export default function NavBar(props: NavBarProps) {
                                                                 <li className='my-6'>
                                                                         <div onClick={handleTeam} className=''>
                                                                                 <Image className='WandImag' width={50} height={50} src={Wand} alt='Wand' />
-                                                                                {props.getTeam === "dark" ? <div className='relative -mt-20 -ml-8'>
+                                                                                {props.getTeam === "dark" ? <div className='relative -mt-20 ltr:-ml-8 rtl:mr-5'>
                                                                                         <Image width={60} height={60} src={ligth} alt='ligth' />
                                                                                 </div> : null}
 
@@ -76,7 +78,7 @@ export default function NavBar(props: NavBarProps) {
                                                                 {navbar.map((val, key) => (
                                                                         <li key={key} onClick={() => setActiveId(val.id)} className={`px-8 ${activeId === val.id ? "text-ligth-color-text dark:text-dark-color-text" : ""}`}>
                                                                                 <div className="active Dark">
-                                                                                        <a href={val.Link} >{val.name}</a>
+                                                                                        <a href={val.Link} >{t(val.name)}</a>
                                                                                 </div>
                                                                         </li>
                                                                 ))}
@@ -86,7 +88,7 @@ export default function NavBar(props: NavBarProps) {
                                                                 <li className="px-8">
                                                                         <div onClick={handleTeam} className='-mt-2'>
                                                                                 <Image className='WandImag' width={50} height={50} src={Wand} alt='Wand' />
-                                                                                {props.getTeam === "dark" ? <div className='relative -mt-20 -ml-8'>
+                                                                                {props.getTeam === "dark" ? <div className='relative -mt-20 ltr:-ml-8 rtl:mr-7'>
                                                                                         <Image width={55} height={55} src={ligth} alt='ligth' />
                                                                                 </div> : null}
                                                                         </div>

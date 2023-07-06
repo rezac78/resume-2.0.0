@@ -1,0 +1,79 @@
+{
+  "Navbar": {
+    "Home": "خانه",
+    "AboutMe": "درباره من",
+    "Resume": "رزمه",
+    "ContactMe": "ارتباط با من"
+  },
+  "ProFile": {
+    "name": "رضام",
+    "greeting":"سلام, من ",
+    "title_summary1":"Full stack Developer 🖥️",
+    "title_summary2":"MERN Stack Dev 😎️",
+    "title_summary3":"Softwere Enginner 💻️",
+    "title_summary4":"React/Next/Node/Nest 🔴️",
+    "summery":"مهارت در طراحی برنامه های کاربردی در زمینه فرانت و بک اند.",
+    "GetResume":"دریافت رزمه",
+    "ContactMe":"ارتباط با من"
+  },
+  "AboutMe": {
+    "HeaderSummery": "توسعه دهنده وب Full Stack با دانش پس زمینه از پشته های MERN به همراه مهارت در ساخت برنامه های کاربردی با حداکثر کارایی.",
+    "highlightHead": "در اینجا چند نکته برجسته وجود دارد",
+    "highlight1":"برنامه نویس فول استک وب",
+    "highlight2":"جلوی تعاملی مطابق با طراحی",
+    "highlight3":"React & Next & Node & Nest",
+    "highlight4":"مدیریت پایگاه داده",
+    "highlight5":"چارچوب طراحی بوت استرپ و Tailwind و متریال رابط کاربری",
+    "GetResume":"دریافت رزمه",
+    "ContactMe":"ارتباط با من",
+    "AboutMe": "درباره من",
+    "QuestionAboutMe": "چرا من را انتخاب کنید؟"
+  },
+  "Resume": {
+    "Resume": "رزمه",
+    "QuestionResume": "جزئیات بیوگرافی رسمی من",
+    "educationTitle": "دانشگاه ازاد",
+    "educationData": "مهر97 - شهریور 01",
+    "educationStady": "مهندسی کامپیوتر",
+    "educationLocation": "لرستان خرم اباد",
+    "workHistoryTitle": "ویش ورک",
+    "workHistoryData": "مهر97 - شهریور 01",
+    "workHistoryLocation": "ایران تهران",
+    "workHistoryPosition":"مهندس سخت افزار",
+    "workHistoryLink":"Wish Work",
+    "projectTitle":"7&8",
+    "projectsData":"سوئد",
+    "projectsTochnologies":"Nodejs-MongoDB-Reactjs-TailwindCss-Jira-Scram",
+    "projectsSummery": "یک وب سایت برای ایجاد یک وبلاگ شخصی یا تجاری",
+    "projectsLink": "سوئد"
+  },
+  "ResumeBar": {
+    "Education": "تحصیلات",
+    "WorkHistory": "تاریخچه کار",
+    "ProgrammingSkills": "مهارت",
+    "Projects": "پروژه"
+  },
+  "resumeEducation-In": {
+    "Location": "مکان",
+    "Address": "ادرس",
+    "Technology":"فن آوری",
+    "Summary":"خلاصه"
+  },
+  "ContactMe":{
+    "ContactMe": "ارتباط با من",
+    "QuestionContactMe": "چرا با من تماس بگیرید؟",
+    "Touch":"در تماس باشید",
+    "SendEmail":"ایمیل خود را اینجا بفرستید!",
+    "EmailTitle":"ایمیل",
+    "NameTitle":"اسم",
+    "MessageTitle":"پیام",
+    "Send": "ارسال"
+  },
+  "LocaleLayout": {
+    "title": "رضا مهرزاد"
+  },
+  "LocaleSwitcher": {
+    "label": "تغیر زبان",
+    "locale": "{locale, select, de {المانی} en {انگلیسی} other {فارسی}}"
+  }
+}

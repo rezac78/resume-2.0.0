@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import Github from "../../../../public/Home/github.svg"
-import Linkedin from "../../../../public/Home/linkedin.svg"
-import Instagram from "../../../../public/Home/instagram.svg"
-import Phone from "../../../../public/Home/phone.png"
+import Github from "@/../public/Home/github.svg"
+import Linkedin from "@/../public/Home/linkedin.svg"
+import Instagram from "@/../public/Home/instagram.svg"
+import Phone from "@/../public/Home/phone.png"
 export default function IconSocialMedia() {
         return (
                 <>

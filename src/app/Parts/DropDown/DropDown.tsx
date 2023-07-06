@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { GlobeAltIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link';
@@ -7,13 +7,27 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Iran from "../../../../public/Home/Iran.svg"
 import English from "../../../../public/Home/uk.svg"
+import Germany from "../../../../public/Home/Germany.svg"
+import { ChangeEvent, useTransition } from 'react';
+import { usePathname } from 'next-intl/client';
+import { useLocale, useTranslations } from 'next-intl';
 
 function classNames(...classes: string[]) {
         return classes.filter(Boolean).join(' ')
 }
 
 export default function DropDown() {
+        const t = useTranslations('LocaleSwitcher');
+        const [isPending, startTransition] = useTransition();
         const router = useRouter();
+        const locale = useLocale();
+        const pathname = usePathname();
+        const onSelectChange = (code: any) => {
+                startTransition(() => {
+                        router.replace(`/${code}${pathname}`);
+                });
+        }
+
         return (
                 <Menu as="div" className="relative inline-block text-left">
                         <div>
@@ -36,30 +50,41 @@ export default function DropDown() {
                                         <div className="py-1">
                                                 <Menu.Item>
                                                         {({ active }) => (
-                                                                <Link
-                                                                        href="#"
+                                                                <div
+                                                                        defaultValue={locale}
                                                                         className={classNames(
-                                                                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                                                                'group flex items-center px-4 py-2 text-sm'
-                                                                        )}
-                                                                >
-                                                                        <Image src={Iran} className="w-3/12 mr-4" alt="flag" />
-                                                                        {"LanguageEn"}
-                                                                </Link>
+                                                                                active ? 'bg-gray-100 text-gray-900 cursor-pointer' : 'text-gray-700',
+                                                                                'group flex ltr:items-center rtl:justify-between px-4 py-2 text-sm'
+                                                                        )} onClick={() => onSelectChange("fa")}>
+                                                                        <Image src={Iran} className="w-3/12 mr-4 ltr:mt-0 rtl:-mt-2" alt="flag" />
+                                                                        {t('locale', { locale: 'fa' })}
+                                                                </div>
                                                         )}
                                                 </Menu.Item>
                                                 <Menu.Item>
                                                         {({ active }) => (
-                                                                <Link
-                                                                        href="#"
+                                                                <div
+                                                                        defaultValue={locale}
                                                                         className={classNames(
-                                                                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                                                                'group flex items-center px-4 py-2 text-sm'
-                                                                        )}
-                                                                >
-                                                                        <Image src={English} className="w-3/12 mr-4" alt="flag" />
-                                                                        {"LanguageEn"}
-                                                                </Link>
+                                                                                active ? 'bg-gray-100 text-gray-900 cursor-pointer' : 'text-gray-700',
+                                                                                'group flex ltr:items-center rtl:justify-between px-4 py-2 text-sm'
+                                                                        )} onClick={() => onSelectChange("en")}>
+                                                                        <Image src={English} className="w-3/12 mr-4 ltr:mt-0 rtl:-mt-2" alt="flag" />
+                                                                        {t('locale', { locale: 'en' })}
+                                                                </div>
+                                                        )}
+                                                </Menu.Item>
+                                                <Menu.Item>
+                                                        {({ active }) => (
+                                                                <div
+                                                                        defaultValue={locale}
+                                                                        className={classNames(
+                                                                                active ? 'bg-gray-100 text-gray-900 cursor-pointer' : 'text-gray-700',
+                                                                                'group flex ltr:items-center rtl:justify-between px-4 py-2 text-sm'
+                                                                        )} onClick={() => onSelectChange("de")}>
+                                                                        <Image src={Germany} className="w-3/12 mr-4 ltr:mt-0 rtl:-mt-2" alt="flag" />
+                                                                        {t('locale', { locale: 'de' })}
+                                                                </div>
                                                         )}
                                                 </Menu.Item>
                                         </div>
