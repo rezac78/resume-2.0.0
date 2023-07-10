@@ -44,7 +44,7 @@ export default function Education() {
                                                                 {FormInputEducation.map((e) => (
                                                                         <>
                                                                                 <Dividers Title={e.Code} />
-                                                                                <FormInput Lable={e.name} Type='text' Placeholder={''} TiTel={e.Title} Register={register} errors={clientFormError} getCode={e.Code} value={undefined} onInputChange={undefined} />
+                                                                                <FormInput Lable={e.name} Type='text' Placeholder={''} TiTel={e.Title} Register={register} errors={clientFormError} getCode={e.Code} />
                                                                         </>
                                                                 ))}
                                                                 <button

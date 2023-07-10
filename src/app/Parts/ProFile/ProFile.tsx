@@ -61,7 +61,7 @@ export default function Profile({getProfile}: any) {
                                 </div>
                                 <div className="flex items-center justify-center shadow-lg shadow-white rounded-full w-72 h-72 tablet:h-[33.5%] tablet:w-[33.5%]">
                                         <div className="bg-cover bg-no-repeat bg-center rounded-full h-[98%] w-[98%] hover:scale-105 ease-out duration-300 delay-200">
-                                                <Image className='rounded-full h-full w-full' width={100} height={100} src={ProfileImage} alt="ProfileImg" />
+                                                <img className='rounded-full h-full w-full' width={100} height={100} src={ProfileImage} alt="ProfileImg" />
                                         </div>
                                 </div>
                         </div>

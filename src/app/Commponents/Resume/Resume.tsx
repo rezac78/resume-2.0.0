@@ -85,16 +85,16 @@ export default function Resume() {
                                         <div className="flex-grow overflow-hidden w-auto h-auto mt-10 tablet:mt-0 tablet:w-[34rem] pt-0 tablet:pl-20">
                                                 <div className={toggleState === 1 ? "animate-scroll-top" : "hidden"}>
                                                         <div className="overflow-y-auto h-[320px]">
-                                                                {getEducation?.map((e: any) => {
-                                                                        return <Education getEducation={e} getCode={getCode} key={e.id} />
+                                                                {getEducation?.map((e: any, index: number) => {
+                                                                        return <Education getEducation={e} getCode={getCode} key={index} />
                                                                 })}
                                                         </div>
                                                 </div>
                                                 <div className={toggleState === 2 ? "animate-scroll-top" : "hidden"}>
                                                         <div className="overflow-y-auto h-[320px]">
                                                                 <div className="flex flex-col h-auto w-full justify-evenly">
-                                                                        {getWorkHistory?.map((e: any) => {
-                                                                                return <WorkHistory key={e.id} getWorkHistory={e} getCode={getCode} />
+                                                                        {getWorkHistory?.map((e: any, index: number) => {
+                                                                                return <WorkHistory key={index} getWorkHistory={e} getCode={getCode} />
                                                                         })}
                                                                 </div>
                                                         </div>
@@ -102,9 +102,9 @@ export default function Resume() {
                                                 <div className={toggleState === 3 ? "animate-scroll-top" : "hidden"}>
                                                         <div className="overflow-y-auto h-[360px]">
                                                                 <div className="flex flex-row h-auto w-full justify-evenly items-center justify-between flex-wrap">
-                                                                        {getProgrammingSkills?.map((e:any) => (
-                                                                                e.ProgrammingSkillsTitle.map((value: any,index: number)=>{
-                                                                                        return <ProgrammingSkills key={e.id} ProgrammingSkillsTitle={value} size={e.ProgrammingSkillsNumber[index]} />
+                                                                        {getProgrammingSkills?.map((e: any) => (
+                                                                                e.ProgrammingSkillsTitle.map((value: any, index: number) => {
+                                                                                        return <ProgrammingSkills key={index} ProgrammingSkillsTitle={value} size={e.ProgrammingSkillsNumber[index]} />
                                                                                 })
                                                                         ))}
                                                                 </div>
@@ -113,8 +113,8 @@ export default function Resume() {
                                                 <div className={toggleState === 4 ? "animate-scroll-top" : "hidden"}>
                                                         <div className="overflow-y-auto h-[320px]">
                                                                 <div className="flex flex-col h-auto w-full justify-evenly">
-                                                                        {getProject?.map((e:any) => {
-                                                                                return <Project key={e.id} getProject={e}  getCode={getCode} />
+                                                                        {getProject?.map((e: any, index: number) => {
+                                                                                return <Project key={index} getProject={e} getCode={getCode} />
                                                                         })}
                                                                 </div>
                                                         </div>

@@ -68,7 +68,7 @@ export default function Project() {
                                                                 {FormInputProject.map((e) => (
                                                                         <>
                                                                                 <Dividers Title={e.Code} />
-                                                                                <FormInput Lable={e.name} Type='text' value={getProfile ?? ""} onInputChange={onInputChange ?? ""} Placeholder={''} TiTel={e.Title} Register={register} errors={clientFormError} getCode={e.Code} />
+                                                                                <FormInput Lable={e.name} Type='text' value={getProfile} onInputChange={onInputChange} Placeholder={''} TiTel={e.Title} Register={register} errors={clientFormError} getCode={e.Code} />
                                                                         </>
                                                                 ))}
                                                                 <button

@@ -6,8 +6,8 @@ interface FormInputProps {
         Register: any;
         errors: any;
         getCode: string;
-        value: any | undefined;
-        onInputChange: any;
+        value?: any | '';
+        onInputChange?: (e: any) => void ;
 }
 
 export default function FormInput(props: FormInputProps) {
@@ -26,7 +26,7 @@ export default function FormInput(props: FormInputProps) {
                                                         type={props.Type}
                                                         name={props.Lable}
                                                         {...props.Register(props.Lable)}
-                                                        value={props.value === undefined ? null : props.value[props.Lable]}
+                                                        value={props.value === undefined ? undefined : props.value[props.Lable]}
                                                         className="w-full text-lg mb-2 border-2 border-transparent outline-none bg-slate-200 px-2 py-2 rounded-xl delay-100 text-black focus:bg-white focus:border-2 focus:border-ligth-color-text dark:focus:border-dark-color-text"
                                                         placeholder={props.Placeholder}
                                                         onChange={props.onInputChange}
