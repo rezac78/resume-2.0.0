@@ -1,16 +1,13 @@
 'use client'
 import Alerts from '@/app/Parts/Alerts/Alerts'
 import NavBarDashs from '@/app/Parts/Dashboard/NavBarDash/NavBarDash'
-import Dividers from '@/app/Parts/Dividers/Dividers'
 import axios from 'axios'
-import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { SchemaAboutMe } from "@/../Schemas/FormSchema";
 import { useForm } from 'react-hook-form'
 import TextArea from "../../../../Parts/TextArea/TextArea"
-import { FormInputAboutMe, FormInputAboutMeHighlights } from "../../../../../Events/Events"
-import { UsersIcon } from '@heroicons/react/24/outline'
+import { FormInputAboutMe} from "../../../../../Events/Events"
 import InputsHighlight from '@/app/Parts/InputsHighlight/InputsHighlight'
 
 
@@ -35,8 +32,6 @@ export default function AboutMe() {
         const [getcode, setcode] = useState("");
         const [alert, setAlert] = useState(false);
         const [image, setImage] = useState<any>("");
-        const [PDFfa, setPDFfa] = useState<any>("");
-        const [PDFen, setPDFen] = useState<any>("");
         const [HighlightEn, setHighlightEn] = useState("");
         const [HighlightDe, setHighlightDe] = useState("");
         const [HighlightFa, setHighlightFa] = useState("");

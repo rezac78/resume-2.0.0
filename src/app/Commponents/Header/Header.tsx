@@ -2,7 +2,6 @@
 import Footer from "@/app/Parts/FooterHeader/Footer"
 import NavBar from "@/app/Parts/Navbar/navBar"
 import ProFile from "@/app/Parts/ProFile/ProFile"
-import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function Header() {

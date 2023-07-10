@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import Dividers from "../../Dividers/Dividers";
-import axios from 'axios';
 
 interface TableProgrammingSkills {
         Title: string;

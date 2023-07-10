@@ -1,7 +1,7 @@
 "use client"
 import { useTranslations } from 'next-intl';
 import { CheckCircleIcon, XMarkIcon } from '@heroicons/react/20/solid'
-export default function Alerts({ CodeSucss, getcode, getTitel }: any) {
+export default function Alerts({getcode, getTitel }: any) {
         const t = useTranslations('AlertsMSG');
         return (
                 <div className="rounded-md bg-green-50 p-4">

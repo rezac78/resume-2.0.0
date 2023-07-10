@@ -1,7 +1,7 @@
 'use client'
 import { useForm } from "react-hook-form";
 import { SchemaLogin } from "../../../../Schemas/FormSchema";
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import { useRouter } from 'next/navigation';

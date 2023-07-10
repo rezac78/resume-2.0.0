@@ -1,6 +1,5 @@
 "use client"
 import { useTranslations } from 'next-intl';
-import { CheckCircleIcon, XMarkIcon } from '@heroicons/react/20/solid'
 import PartsHeader from '../PartsHeader/PartsHeader';
 import Bouttons from '../Bouttons/Boutton';
 import Image from 'next/image';

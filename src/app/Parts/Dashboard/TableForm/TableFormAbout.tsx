@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import Dividers from "../../Dividers/Dividers";
-import Link from 'next/link';
 
 interface TableFormAbout {
   Title: string;

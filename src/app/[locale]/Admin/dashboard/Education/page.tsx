@@ -20,10 +20,6 @@ export default function Education() {
         const { register, handleSubmit, formState: { errors: clientFormError } } = useForm({
                 resolver: yupResolver(SchemaAddEducation),
         });
-
-        //   const onInputChange = (e: any) => {
-        //     setProfile({ ...getProfile, [e.target.name]: e.target.value });
-        //   };
         const onSubmit = (item: any) => {
                     const options = {
                       headers: { 'Content-Type': 'application/json', Accept: 'application/json', "Access-Control-Allow-Origin": "*" },

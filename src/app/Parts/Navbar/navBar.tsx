@@ -5,8 +5,6 @@ import Image from 'next/image';
 import { navbar } from "@/Events/Events"
 import MenuOpen from "@/../public/Home/menu.png"
 import MenuClose from "@/../public/Home/close.png"
-import Wand from "@/../public/Home/Wand.png"
-import ligth from "@/../public/Home/ligth.png"
 import DropDown from '../DropDown/DropDown';
 import { MoonIcon, SunIcon } from '@heroicons/react/20/solid'
 

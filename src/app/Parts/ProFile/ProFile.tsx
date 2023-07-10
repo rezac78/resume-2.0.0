@@ -1,8 +1,6 @@
 "use client"
-import Image from 'next/image'
 import { useTranslations } from 'next-intl';
 import { Typewriter } from 'react-simple-typewriter';
-import ProfileImg from "@/../public/Home/profilephoto.jpg"
 import Bouttons from '../Bouttons/Boutton';
 import IconSocialMedia from '../IconSocialMedia/IconSocialMedia';
 import { useEffect, useState } from 'react';

@@ -1,8 +1,6 @@
 'use client'
 import { useTranslations } from 'next-intl';
 import Bouttons from "@/app/Parts/Bouttons/Boutton";
-import aboutImage from "@/../public/Home/cover.svg"
-import Image from 'next/image'
 import PartsHeader from "@/app/Parts/PartsHeader/PartsHeader";
 import { useEffect, useState } from 'react';
 
