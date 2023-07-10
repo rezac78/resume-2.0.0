@@ -40,7 +40,6 @@ export default function ContactMe() {
         });
         const onSubmit = (data: any) => {
                 setInputVal(true);
-                console.log(data)
                 emailjs.sendForm('service_pke74m6', 'template_hk0t1os', form.current, '-AohTxKTUcg7RfNbr')
                         .then((result) => {
                                 setcodeSucss(result.status);

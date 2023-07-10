@@ -67,7 +67,7 @@ export default function Profile() {
       console.log("Error: ", error);
     };
   }
-  const onSubmit = (item) => {
+  const onSubmit = (item: any) => {
     const Data = {
       img: image === "" ? getProfile?.image : JSON.stringify({ base64: image }),
       FileFa: PDFfa === "" ? getProfile.FileFa : JSON.stringify({ base64: PDFfa }),
@@ -77,7 +77,6 @@ export default function Profile() {
       summaryDE: getProfile.summaryDE,
     }
     const NewData = { ...item, ...Data };
-    console.log(NewData)
     const options = {
       headers: { 'Content-Type': 'application/json', Accept: 'application/json', "Access-Control-Allow-Origin": "*" },
     };

@@ -2,17 +2,17 @@ import { useEffect, useState } from 'react';
 import Dividers from "../../Dividers/Dividers";
 import Link from 'next/link';
 
-interface TableForm {
+interface TableFormAbout {
   Title: string;
   TiTleHeader: any;
-  getProfile: any;
+  getAboutMe: any;
 }
 
-export default function TableForm(props: TableForm) {
+export default function TableFormAbout(props: TableFormAbout) {
   const [getData, setData] = useState<any>([]);
   useEffect(() => {
-    setData(props.getProfile)
-  }, [props.getProfile]);
+    setData(props.getAboutMe)
+  }, [props.getAboutMe]);
   return (
     <div className="p-4 sm:px-6 lg:px-8">
       <Dividers Title={props.Title} />
@@ -30,35 +30,22 @@ export default function TableForm(props: TableForm) {
                     ))}
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-200 bg-white overflow-x-auto		">
+                <tbody className="divide-y divide-gray-200 bg-white overflow-x-auto">
                   <tr>
                     {getData.map((e: any) => {
                       return <>
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                          <img className='h-12 w-12' src={e.image?.slice(11, -2)} />
+                          <img className='h-12 w-12' src={e.image} />
                         </td>
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{e.summaryEn}</td>
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{e.summaryDE}</td>
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{e.summaryFA}</td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                          <Link
-                            href={e.FileFa?.slice(11, -2)}
-                            target="_blank"
-                          >
-                            ResumepdfEn
-                          </Link>
-                        </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                          <Link
-                            href={e.FileFa?.slice(11, -2)}
-                            target="_blank"
-                          >
-                            ResumepdfFA
-                          </Link>
-                        </td>
+                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{e.HighlightsEn}</td>
+                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{e.HighlightsDE}</td>
+                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{e.HighlightsFA}</td>
                         <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                          <a href="/Admin/dashboard/Profile" className="text-indigo-600 hover:text-indigo-900">
-                            Edit<span className="sr-only"></span>
+                          <a href="/Admin/dashboard/AboutMe" className="text-indigo-600 hover:text-indigo-900">
+                            Edit<span className="sr-only">, reza</span>
                           </a>
                         </td>
                       </>

@@ -7,15 +7,13 @@ import Bouttons from '../Bouttons/Boutton';
 import IconSocialMedia from '../IconSocialMedia/IconSocialMedia';
 import { useEffect, useState } from 'react';
 export default function Profile({getProfile}: any) {
-        console.log(getProfile)
         const t = useTranslations('ProFile');
         const [getCode, setCode] = useState("");
         useEffect(() => {
                 const getCockie = window.location.pathname
                 if (getCockie !== null) setCode(getCockie.slice(1, 3));
         }, []);
-        console.log(getCode)
-        // summaryDE
+        const ProfileImage = getProfile.image?.slice(11, -2);
         return (
                 <div className="flex items-center text-center dark:bg-black justify-center h-1/6 min-h-fit">
                         <div className="flex flex-col-reverse items-center tablet:flex tablet:flex-row">
@@ -63,7 +61,7 @@ export default function Profile({getProfile}: any) {
                                 </div>
                                 <div className="flex items-center justify-center shadow-lg shadow-white rounded-full w-72 h-72 tablet:h-[33.5%] tablet:w-[33.5%]">
                                         <div className="bg-cover bg-no-repeat bg-center rounded-full h-[98%] w-[98%] hover:scale-105 ease-out duration-300 delay-200">
-                                                <Image className='rounded-full h-full w-full' src={getProfile.image?.slice(11, -2)} alt="ProfileImg" />
+                                                <Image className='rounded-full h-full w-full' width={100} height={100} src={ProfileImage} alt="ProfileImg" />
                                         </div>
                                 </div>
                         </div>

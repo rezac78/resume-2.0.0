@@ -7,7 +7,7 @@ import {
 } from '@heroicons/react/24/outline'
 import {NavBarDash} from "../../../../Events/Events"
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
         return classes.filter(Boolean).join(' ')
 }
 

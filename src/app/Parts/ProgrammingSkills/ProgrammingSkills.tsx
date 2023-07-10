@@ -1,18 +1,16 @@
 interface ProgrammingSkillsProps {
-        programmingSkillsTitle: string;
-        size: string;
+        ProgrammingSkillsTitle: any;
+        size: any;
 }
 
 export default function ProgrammingSkills(props: ProgrammingSkillsProps) {
         return (
-                <div>
-                        <div className="flex flex-col relative w-6/12 my-2">
-                                <span className='text-base text-ligth-color-text dark:text-dark-color-text'>{props.programmingSkillsTitle}</span>
-                                <div className="relative h-4 w-9/12 bg-ligth-color-text dark:bg-dark-color-text rounded-full">
-                                        <div className="h-4 absolute bg-gray-900 dark:bg-gray-200 rounded-full ease-in duration-300 delay-300	" style={{ 'width': `${props.size}%` }} >
-                                        </div>
+                <>
+                        <div className="flex rounded-lg flex-col items-center pb-10">
+                                <div className={`relative  h-40 w-40 flex items-center justify-center rounded-full before:content-[''] before:absolute before:h-36 before:w-36  before:rounded-full before:bg-black`} style={{"background":`conic-gradient(#ed3c57, ${props.size*3.6}deg, #ededed 0deg)`}}>
+                                        <span className="relative text-xl font-semibold text-white">{props.ProgrammingSkillsTitle}</span>
                                 </div>
                         </div>
-                </div>
+                </>
         )
 }
