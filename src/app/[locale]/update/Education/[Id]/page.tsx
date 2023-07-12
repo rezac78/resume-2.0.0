@@ -16,6 +16,7 @@ export default function Education() {
         const [getTitel, setTitel] = useState("");
         const [getcode, setcode] = useState("");
         const [alert, setAlert] = useState(false);
+        const [image, setImage] = useState<any>("");
         const [getProfile, setProfile] = useState<any>([]);
         function getData() {
                 const id = window.location.pathname.slice(-24)
@@ -33,8 +34,19 @@ export default function Education() {
         const onInputChange = (e: any) => {
                 setProfile({ ...getProfile, [e.target.name]: e.target.value });
         };
+        const handleUploadimag = (e: any) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(e.target.files[0]);
+                reader.onload = () => {
+                        setImage(reader.result);
+                };
+                reader.onerror = error => {
+                        console.log("Error: ", error);
+                };
+        };
         const onSubmit = (item: any) => {
                 const Data = {
+                        img: image === "" ? getProfile?.image : JSON.stringify({ base64: image }),
                         EducationTitleEn: getProfile.EducationTitleEn,
                         EducationTitleDe: getProfile.EducationTitleDe,
                         EducationTitleFa: getProfile.EducationTitleFa,
@@ -70,6 +82,10 @@ export default function Education() {
                                                                                 <FormInput Lable={e.name} Type='text' value={getProfile} onInputChange={onInputChange} Placeholder={''} TiTel={e.Title} Register={register} errors={clientFormError} getCode={e.Code} />
                                                                         </>
                                                                 ))}
+                                                                <div className="mt-2 flex items-center gap-x-3">
+                                                                        <input type="file" accept='image/*' name="file" onChange={handleUploadimag} />
+                                                                        {image === "" || image == null ? <img className='h-12 w-12' src={getProfile.image} /> : <img className='h-12 w-12' src={image} />}
+                                                                </div>
                                                                 <button
                                                                         type="submit"
                                                                         className="rounded-md bg-white mt-10 px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"

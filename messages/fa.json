@@ -57,6 +57,7 @@
     "Location": "مکان",
     "Address": "ادرس",
     "Technology":"فن آوری",
+    "Position":"موقعیت",
     "Summary":"خلاصه"
   },
   "ContactMe":{

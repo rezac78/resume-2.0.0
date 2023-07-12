@@ -71,6 +71,7 @@ export const SchemaAddWorkHistory = yup.object({
         WorkHistoryDataDe: yup.string(),
         WorkHistoryDataFa: yup.string(),
         WorkHistoryLink: yup.string(),
+        img: yup.string(),
 });
 export const SchemaEditWorkHistory = yup.object({
         WorkHistoryTitleEn: yup.string(),
@@ -86,6 +87,7 @@ export const SchemaEditWorkHistory = yup.object({
         WorkHistoryDataDe: yup.string(),
         WorkHistoryDataFa: yup.string(),
         WorkHistoryLink: yup.string(),
+        img: yup.string(),
 });
 
 export const SchemaAddProgrammingSkills = yup.object({

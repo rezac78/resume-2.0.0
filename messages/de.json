@@ -54,6 +54,7 @@
   "resumeEducation-In": {
     "Location": "Standort",
     "Address": "Adresse",
+    "Position":"Position",
     "Technology": "Technologie",
     "Summary": "Zusammenfassung"
   },

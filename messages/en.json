@@ -57,6 +57,7 @@
     "Location": "Location",
     "Address": "Address",
     "Technology":"Technology",
+    "Position":"Position",
     "Summary":"Summary"
   },
   "ContactMe":{

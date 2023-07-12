@@ -40,3 +40,55 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+.CenterText{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+}
+
+.CenterText h1{
+  position: relative;
+  font-size: 8em;
+  color: #222;
+  text-transform: uppercase;
+  border-bottom: 16px solid #222;
+  letter-spacing: 0.05em;
+  line-height:1.2em;
+}
+
+.CenterText h1:before{
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #03a9f4;
+  overflow: hidden;
+  border-bottom: 16px solid #03a9f4;
+  animation: animate 5s linear infinite;
+}
+
+
+@keyframes animate{
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 820px){
+  .CenterText h1{
+    font-size: 5em;
+  }
+}
+@media screen and (max-width: 460px){
+  .CenterText h1{
+    font-size: 3em;
+  }
+}

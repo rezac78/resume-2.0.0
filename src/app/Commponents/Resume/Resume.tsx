@@ -82,21 +82,19 @@ export default function Resume() {
                                                         </div>
                                                 </div>
                                         </div>
-                                        <div className="flex-grow overflow-hidden w-auto h-auto mt-10 tablet:mt-0 tablet:w-[34rem] pt-0 tablet:pl-20">
+                                        <div className="flex-grow overflow-hidden w-auto h-auto mt-10 tablet:mt-0 tablet:w-[34rem] pt-0 tablet:pl-0">
                                                 <div className={toggleState === 1 ? "animate-scroll-top" : "hidden"}>
-                                                        <div className="overflow-y-auto h-[320px]">
+                                                        <div className="flex flex-wrap overflow-y-auto h-[360px] mobile:px-8">
                                                                 {getEducation?.map((e: any, index: number) => {
                                                                         return <Education getEducation={e} getCode={getCode} key={index} />
                                                                 })}
                                                         </div>
                                                 </div>
                                                 <div className={toggleState === 2 ? "animate-scroll-top" : "hidden"}>
-                                                        <div className="overflow-y-auto h-[320px]">
-                                                                <div className="flex flex-col h-auto w-full justify-evenly">
-                                                                        {getWorkHistory?.map((e: any, index: number) => {
-                                                                                return <WorkHistory key={index} getWorkHistory={e} getCode={getCode} />
-                                                                        })}
-                                                                </div>
+                                                        <div className="flex flex-wrap overflow-y-auto h-[360px] mobile:px-8">
+                                                                {getWorkHistory?.map((e: any, index: number) => {
+                                                                        return <WorkHistory key={index} getWorkHistory={e} getCode={getCode} />
+                                                                })}
                                                         </div>
                                                 </div>
                                                 <div className={toggleState === 3 ? "animate-scroll-top" : "hidden"}>
@@ -111,12 +109,10 @@ export default function Resume() {
                                                         </div>
                                                 </div>
                                                 <div className={toggleState === 4 ? "animate-scroll-top" : "hidden"}>
-                                                        <div className="overflow-y-auto h-[320px]">
-                                                                <div className="flex flex-col h-auto w-full justify-evenly">
-                                                                        {getProject?.map((e: any, index: number) => {
-                                                                                return <Project key={index} getProject={e} getCode={getCode} />
-                                                                        })}
-                                                                </div>
+                                                        <div className="flex flex-wrap overflow-y-auto h-[360px] mobile:px-8">
+                                                                {getProject?.map((e: any, index: number) => {
+                                                                        return <Project key={index} getProject={e} getCode={getCode} />
+                                                                })}
                                                         </div>
                                                 </div>
                                         </div>
