@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Dividers from "../../Dividers/Dividers";
+import { PencilIcon } from '@heroicons/react/24/outline';
 
 interface TableProgrammingSkills {
         Title: string;
@@ -31,12 +32,12 @@ export default function TableProgrammingSkills(props: TableProgrammingSkills) {
                                                                 </thead>
                                                                 <tbody className="divide-y divide-gray-200 bg-white overflow-x-auto">
                                                                         {getData.map((e: any, i: number) => {
-                                                                                return <tr>
-                                                                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{e.ProgrammingSkillsNumber}</td>
+                                                                                return <tr key={i}>
+                                                                                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">{e.ProgrammingSkillsNumber}</td>
                                                                                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{e.ProgrammingSkillsTitle}</td>
                                                                                         <td className="relative flex whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                                                                                 <a href={`/Admin/dashboard/ProgrammingSkills`} className="text-indigo-600 hover:text-indigo-900">
-                                                                                                        Edit<span className="sr-only"></span>
+                                                                                                        <PencilIcon width={15} height={15} />
                                                                                                 </a>
                                                                                         </td>
                                                                                 </tr>

@@ -5,7 +5,7 @@ import emailjs from '@emailjs/browser';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Image from 'next/image'
-import { SchemaForm } from "../../../../Schemas/FormSchema";
+import { SchemaFormEn, SchemaFormDe, SchemaFormFa } from "../../../../Schemas/FormSchema";
 import Mailz from '@/../public/Home/mailz.svg'
 import PaperPlane from "@/../public/Home/email-send.png"
 import PartsHeader from '../../Parts/PartsHeader/PartsHeader';
@@ -36,7 +36,7 @@ export default function ContactMe() {
                 if (getCockie !== null) setCode(getCockie.slice(1, 3));
         }, []);
         const { register, handleSubmit, formState: { errors: clientFormError } } = useForm({
-                resolver: yupResolver(SchemaForm),
+                resolver: yupResolver(getCode === "de" ? SchemaFormDe : getCode === "fa" ? SchemaFormFa : SchemaFormEn),
         });
         const onSubmit = (data: any) => {
                 setInputVal(true);

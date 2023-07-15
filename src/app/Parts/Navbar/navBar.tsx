@@ -9,8 +9,9 @@ import DropDown from '../DropDown/DropDown';
 import { MoonIcon, SunIcon } from '@heroicons/react/20/solid'
 
 interface NavBarProps {
-        getTeam: string;
-        setTeam: React.Dispatch<React.SetStateAction<string>>;
+        getTeam: any;
+        setTeam: any;
+        classes: string;
 }
 
 export default function NavBar(props: NavBarProps) {
@@ -34,10 +35,10 @@ export default function NavBar(props: NavBarProps) {
         }
 
         return (
-                <div className='p-0 tablet:relative flex justify-center items-center w-full box-border py-12 dark:bg-black'>
+                <div className={`p-0 tablet:relative flex justify-center items-center w-full box-border py-12 dark:bg-black ${props.classes}`}>
                         {
                                 OpenMenu === true ?
-                                        <div >
+                                        <div>
                                                 <div className="top-0 left-0 absolute w-full h-screen flex justify-center items-center bg-bg-background-menu backdrop-opacity-10 tablet:z-10">
                                                         <ul className="flex flex-col items-center">
                                                                 {navbar.map((val, key) => (

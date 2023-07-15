@@ -17,7 +17,7 @@ export default function Profile({getProfile}: any) {
                         <div className="flex flex-col-reverse items-center tablet:flex tablet:flex-row">
                                 <div className="text-xl tablet:text-2xl mt-10 tablet:m-0 tablet:mr-20 ">
                                         <div className="flex justify-center">
-                                                <IconSocialMedia />
+                                                <IconSocialMedia classes={""} />
                                         </div>
                                         <div className="text-2xl tablet:text-3xl">
                                                 <span className="text-white">

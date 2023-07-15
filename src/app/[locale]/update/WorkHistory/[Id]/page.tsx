@@ -14,7 +14,7 @@ import FormInput from '@/app/Parts/FormInput/FormInput';
 export default function WorkHistory() {
         const form: any = useRef();
         const [getTitel, setTitel] = useState("");
-        const [getcode, setcode] = useState("");
+        const [getcode, setcode] = useState<any>("");
         const [alert, setAlert] = useState(false);
         const [image, setImage] = useState<any>("");
         const [getProfile, setProfile] = useState<any>([]);
@@ -66,31 +66,39 @@ export default function WorkHistory() {
                         headers: { 'Content-Type': 'application/json', Accept: 'application/json', "Access-Control-Allow-Origin": "*" },
                 };
                 axios.put(`${process.env.NEXT_PUBLIC_BACKEND_URL}api/Dashboard/WorkHistory/${getProfile._id}`, Data, options).then((result) => {
-                        console.log(result)
+                        setTitel(result.data.Message)
+                        setcode(result.status)
                 });
+                setAlert(true);
+                setTimeout(() => {
+                        setAlert(false);
+                }, 5000);
         }
         return (
                 <>
                         <NavBarDashs />
                         <div>
-                                {alert ? <Alerts getTitel={getTitel} getcode={getcode} CodeSucss={undefined} /> : null}
                                 <main className="lg:pl-72">
                                         <div className="text-black">
+                                                {alert ? <Alerts getTitel={getTitel} getcode={getcode} CodeSucss={undefined} /> : null}
                                                 <form ref={form} onSubmit={handleSubmit(onSubmit)}>
-                                                        <div className="col-span-full">
+                                                        <div className="px-6 mobile:px-24 py-6">
                                                                 {FormInputWorkHistory.map((e) => (
                                                                         <>
                                                                                 <Dividers Title={e.Code} />
                                                                                 <FormInput Lable={e.name} Type='text' value={getProfile} onInputChange={onInputChange} Placeholder={''} TiTel={e.Title} Register={register} errors={clientFormError} getCode={e.Code} />
                                                                         </>
                                                                 ))}
-                                                                <div className="mt-2 flex items-center gap-x-3">
-                                                                        <input type="file" accept='image/*' name="file" onChange={handleUploadimag} />
-                                                                        {image === "" || image == null ? <img className='h-12 w-12' src={getProfile.image?.slice(11, -2)} /> : <img className='h-12 w-12' src={image} />}
+                                                                <div className="m-2 flex items-center">
+                                                                        <div className="-mt-3">
+                                                                                <input className='' type="file" accept='image/*' name="file" id="Image-btn" onChange={handleUploadimag} hidden />
+                                                                                <label className="text-white p-2 rounded-full cursor-pointer bg-ligth-color-text" htmlFor="Image-btn">Choose Image</label>
+                                                                        </div>
+                                                                        {image === "" || image == null ? <img className='rounded-full h-[20%] w-[20%]' width={100} height={100} src={getProfile.image?.slice(11, -2)} alt="ProfileImg" /> : <img className='rounded-full h-[20%] w-[20%]' src={image} />}
                                                                 </div>
                                                                 <button
                                                                         type="submit"
-                                                                        className="rounded-md bg-white mt-10 px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                                                                        className="w-40 border-inherit dark:border-dark-color-text border-2 hover:border-ligth-color-text hover:dark:border-white rounded-full py-3.5 text-sm font-semibold text-black shadow-sm"
                                                                 >
                                                                         create
                                                                 </button>

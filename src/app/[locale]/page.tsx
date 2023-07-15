@@ -11,17 +11,16 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setAlert(false);
-    }, 2500);
+    }, 2800);
   }, []);
   return (
     <>
-      <Reload alert={alert} />
-      <div className={`flex flex-col justify-between min-h-[670px] bg-white dark:bg-black font-serif ${alert ? "opacity-0" : "opacity-100"}`}>
+      {alert ? <Reload alert={alert} /> : <div className={`flex flex-col justify-between min-h-[670px] bg-white dark:bg-black font-serif`}>
         <Header />
         <AboutMe />
         <Resume />
         <ContactMe />
-      </div>
+      </div>}
     </>
   )
 }

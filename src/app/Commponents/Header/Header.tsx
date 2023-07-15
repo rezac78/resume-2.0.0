@@ -25,7 +25,7 @@ export default function Header() {
     <div className="dark:bg-black bg-[url('/Home/bg.svg')]">
       <svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
       </svg>
-      <NavBar setTeam={setTeam} getTeam={getTeam} />
+      <NavBar setTeam={setTeam} getTeam={getTeam} classes={""} />
       <ProFile getProfile={getProfile} />
       <Footer getTeam={getTeam} />
     </div>

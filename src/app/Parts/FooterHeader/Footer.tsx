@@ -3,7 +3,7 @@ import shape from "@/../public/Home/shape-bg.png"
 import shapeDark from "@/../public/Home/shape-bg-Dark.png"
 
 interface FooterProps {
-        getTeam: string;
+        getTeam: any;
 }
 
 export default function Footer(props: FooterProps) {

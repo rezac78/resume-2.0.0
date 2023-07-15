@@ -11,9 +11,9 @@ interface FormInputProps {
 }
 
 export default function FormInput(props: FormInputProps) {
-        const msgFA = props.errors[props.Lable]?.message.slice(0, 18);
-        const msgEn = props.errors[props.Lable]?.message.slice(19, 37);
-        const msgDe = props.errors[props.Lable]?.message.slice(37);
+        const msgFA = props.errors[props.Lable]?.message;
+        const msgEn = props.errors[props.Lable]?.message;
+        const msgDe = props.errors[props.Lable]?.message;
         return (
                 <>
                         <label htmlFor={props.Lable} className="block text-sm leading-6 text-gray-900">

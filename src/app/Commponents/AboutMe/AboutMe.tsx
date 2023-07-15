@@ -41,7 +41,7 @@ export default function AboutMe() {
                                 <PartsHeader Title={t("AboutMe")} Question={t("QuestionAboutMe")} />
                                 <div className="flex w-full dark:border-2 dark:border-inherit shadow-xl tablet:shadow-[0px_0px_20px_-2px] shadow-[#1f2235]">
                                         <div className="hidden tablet:flex  w-6/12 bg-cover bg-no-repeat bg-center opacity-90 dark:border-2 dark:border-inherit">
-                                                <img className="w-full h-[630px]" src={getAbout.image} width={100} height={100} alt="aboutImage" />
+                                                <img className="w-full h-[670px]" src={getAbout.image?.slice(11,-2)} width={100} height={100} alt="aboutImage" />
                                         </div>
                                         <div className="w-full tablet:w-6/12 text-justify p-4 tablet:p-9">
                                                 <span className="text-xs tablet:text-sm dark:text-white">{t("HeaderSummery")}</span>

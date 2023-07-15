@@ -14,41 +14,65 @@ import FormInput from '@/app/Parts/FormInput/FormInput';
 export default function WorkHistory() {
         const form: any = useRef();
         const [getTitel, setTitel] = useState("");
-        const [getcode, setcode] = useState("");
+        const [getcode, setcode] = useState<any>("");
         const [alert, setAlert] = useState(false);
+        const [image, setImage] = useState<any>("");
 
-        const { register, handleSubmit, formState: { errors: clientFormError } } = useForm({
+        const { register, handleSubmit, reset, formState: { errors: clientFormError } } = useForm({
                 resolver: yupResolver(SchemaAddWorkHistory),
         });
         const onSubmit = (item: any) => {
-                    const options = {
-                      headers: { 'Content-Type': 'application/json', Accept: 'application/json', "Access-Control-Allow-Origin": "*" },
-                    };
-                    axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}api/Dashboard/WorkHistory`, item, options).then((result) => {
-                      console.log(result)
-                    });
+                const options = {
+                        headers: { 'Content-Type': 'application/json', Accept: 'application/json', "Access-Control-Allow-Origin": "*" },
+                };
+                axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}api/Dashboard/WorkHistory`, item, options).then((result) => {
+                        setTitel(result.data.Message)
+                        setcode(result.status)
+                });
+                reset();
+                setAlert(true);
+                setTimeout(() => {
+                        setAlert(false);
+                }, 5000);
         }
+        const handleUploadimag = (e: any) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(e.target.files[0]);
+                reader.onload = () => {
+                        setImage(reader.result);
+                };
+                reader.onerror = error => {
+                        console.log("Error: ", error);
+                };
+        };
         return (
                 <>
                         <NavBarDashs />
                         <div>
-                                {alert ? <Alerts getTitel={getTitel} getcode={getcode} CodeSucss={undefined} /> : null}
                                 <main className="lg:pl-72">
                                         <div className="text-black">
+                                                {alert ? <Alerts getTitel={getTitel} getcode={getcode} CodeSucss={undefined} /> : null}
                                                 <form ref={form} onSubmit={handleSubmit(onSubmit)}>
-                                                        <div className="col-span-full">
+                                                        <div className="px-6 mobile:px-24 py-6">
                                                                 {FormInputWorkHistory.map((e) => (
                                                                         <>
                                                                                 <Dividers Title={e.Code} />
                                                                                 <FormInput Lable={e.name} Type='text' Placeholder={''} TiTel={e.Title} Register={register} errors={clientFormError} getCode={e.Code} />
                                                                         </>
                                                                 ))}
-                                                                <button
-                                                                        type="submit"
-                                                                        className="rounded-md bg-white mt-10 px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                                                                >
-                                                                        create
-                                                                </button>
+                                                                <div className="mt-2 flex items-center gap-x-3">
+                                                                        <input type="file" accept='image/*' name="file" id="Image-btn5" hidden onChange={handleUploadimag} />
+                                                                        <label className="text-white p-2 rounded-full cursor-pointer bg-ligth-color-text" htmlFor="Image-btn5">Choose Image</label>
+                                                                        {image === "" || image == null ? null : <img className='rounded-full h-[20%] w-[20%]' alt="UploadIMAGE" src={image} />}
+                                                                </div>
+                                                                <div className="mt-5">
+                                                                        <button
+                                                                                type="submit"
+                                                                                className="w-32 border-inherit dark:border-dark-color-text border-2 hover:border-ligth-color-text hover:dark:border-white rounded-full py-3.5 text-sm font-semibold text-black shadow-sm"
+                                                                        >
+                                                                                create
+                                                                        </button>
+                                                                </div>
                                                         </div>
                                                 </form>
                                         </div>
